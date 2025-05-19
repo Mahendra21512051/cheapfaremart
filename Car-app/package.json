@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "Car-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,13 +14,9 @@
     "@tailwindcss/vite": "^4.1.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-<<<<<<< HEAD:Car-app/package.json
-    "react-redux": "^9.2.0"
-=======
-    "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
+    "react-icons": "^5.5.0",
     "tailwindcss": "^4.1.7"
->>>>>>> df652f8be163a986df861cb827acd5c94fbff4f5:my-app/package.json
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
