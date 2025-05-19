@@ -1,11 +1,10 @@
 import Header from '../src/component/Header';
+import Footer from './component/Footer';
 function App() {
   return (
     <>
-      <h1 className="bg-green-700">welcom to  my Home nishan</h1> 
-      <p>Its changing</p> 
-      <p>its change mahendra</p>
-      <Header/>     
+      <Header/> 
+      <Footer/>   
     </>
   )
 }
