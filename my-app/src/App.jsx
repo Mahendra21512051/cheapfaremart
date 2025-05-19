@@ -1,0 +1,11 @@
+import Header from '../src/component/Header';
+function App() {
+  return (
+    <>
+      <h1 className="bg-green-700">welcom to  my Home</h1>  
+      <Header/>     
+    </>
+  )
+}
+
+export default App
