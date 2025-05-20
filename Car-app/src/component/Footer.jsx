@@ -128,7 +128,6 @@ const Footer = () => {
                 {/* Payment Icon */}
                 <div>
                     <img src="images/caed.png"  />
-                    <img src=""/>
                 </div>
                 <div></div>
             </div>

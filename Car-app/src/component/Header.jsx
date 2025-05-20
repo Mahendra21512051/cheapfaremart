@@ -1,153 +1,275 @@
-
-import React from "react";
-import { useState } from 'react';
+import React, { useState } from "react";
+import {
+  FaHome,
+  FaPlane,
+  FaCar,
+  FaBook,
+  FaBlog,
+  FaComments,
+  FaPhone,
+} from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  // const navigate = useNavigate();
+  const countries = [
+    { name: "USA", image: "/images/usa.png" },
+    { name: "UAE", image: "/images/uae.png" },
+  ];
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
-const [selectedCountry, setSelectedCountry] = useState({
-  name: 'UAE',
-  image: '/images/uae.png',
-});
+  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-const handleSelect = (country) => {
-  setSelectedCountry(country);
-  setDropdownOpen(false);
-};
+  const handleSelect = (country) => {
+    setSelectedCountry(country);
+    setDropdownOpen(false);
+  };
+
   const openLiveChat = () => {
-    window.open(
-      "https://v2.zopim.com/widget/livechat.html?api_calls=%5B%5D&hostname=www.cheapfaremart.com&key=RBC8QRCFscg6SH52xhQ8W82v0xOUlc9u&lang=en",
-      "_blank",
-      "location=yes,height=570,width=520,scrollbars=yes,status=yes"
-    );
+    // window.open(
+    //   "https://v2.zopim.com/widget/livechat.html?api_calls=%5B%5D&hostname=www.cheapfaremart.com&key=RBC8QRCFscg6SH52xhQ8W82v0xOUlc9u&lang=en",
+    //   "_blank",
+    //   "location=yes,height=570,width=520,scrollbars=yes,status=yes"
+    // );
   };
 
   return (
-    <nav className="w-full bg-white shadow-md">
-      <div className="w-full px-[15px] mx-auto text-[#212529] text-base font-normal leading-6 text-left font-sans flex items-center justify-between  py-3 flex-wrap lg:flex-nowrap">
+    <nav className="w-full bg-white shadow-md relative z-50">
+      <div className="w-full px-[15px] mx-auto text-[#212529] text-base font-normal leading-6 text-left font-sans flex items-center justify-between py-3 flex-wrap lg:flex-nowrap">
         {/* Logo */}
-        <a
-  href="#"
-  className="inline-block mr-4 p-0 text-left text-[1.25rem] font-normal leading-none whitespace-nowrap text-[rgba(0,0,0,0.9)] bg-transparent no-underline box-border"
->
-  <img src="/images/logous.jpg" alt="Logo" className="h-11" />
-</a>
+        <Link
+          to="/"
+          className="inline-block mr-4 text-[1.25rem] font-normal leading-none whitespace-nowrap bg-transparent no-underline"
+        >
+          <img src="/images/logo.svg" alt="Logo" className="h-11" />
+        </Link>
 
-
-        {/* Call Button (Mobile) */}
+        {/* Call Button (Mobile Only) */}
         <div className="block lg:hidden">
-          <a href="tel:+1-888-497-1354" className="flex items-center space-x-2 text-sm text-blue-600">
-            <i className="fa fa-phone"></i>
+          <a
+            href="tel:+1-888-497-1354"
+            className="flex items-center px-4 py-2 bg-orange-500 text-white text-sm font-semibold rounded-md shadow hover:bg-orange-600 transition-all duration-200"
+          >
+            <FaPhone className="mr-2 text-base transform -scale-x-100" />
             <span>Call</span>
           </a>
         </div>
 
-        {/* Toggle Button (Mobile Nav) */}
+        {/* Hamburger Button */}
         <button
-          className="lg:hidden text-gray-700 text-xl"
-          onClick={() => {
-            const menu = document.getElementById("mobile-menu");
-            menu.classList.toggle("hidden");
-          }}
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="lg:hidden flex items-center justify-center w-10 h-10 rounded-md text-xl shadow-md z-50"
         >
-          ☰
+          {menuOpen ? "✖" : "☰"}
         </button>
 
-        {/* Menu Items */}
-        <div id="mobile-menu" className="w-full md:flex md:items-center md:w-auto hidden">
-          <ul className="flex flex-col lg:flex-row lg:space-x-6 mt-4 lg:mt-0">
-            <li><a className="block text-gray-700  font-semibold" href="#">Home</a></li>
-            <li><a className="block text-gray-700  text-[13px] font-semibold" href="#">Flights</a></li>
-            <li><a className="block text-gray-700  text-[13px] font-semibold" href="#">About Us</a></li>
-            <li><a className="block text-gray-700  text-[13px] font-semibold" href="#">Contact Us</a></li>
-            <li><a className="block text-gray-700  text-[13px] font-semibold" href="#">Blog</a></li>
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex lg:items-center lg:space-x-6 ml-auto">
+          <ul className="flex items-center space-x-6">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `text-[13px] font-semibold pb-1 border-b-2 ${isActive
+                    ? 'border-orange-500'
+                    : 'border-transparent text-gray-700 hover:border-orange-500'
+                  }`
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/flights"
+                className={({ isActive }) =>
+                  `text-[13px] font-semibold pb-1 border-b-2 ${isActive
+                    ? 'border-orange-500'
+                    : 'border-transparent text-gray-700 hover:border-orange-500'
+                  }`
+                }
+              >
+                Flights
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/cars"
+                className={({ isActive }) =>
+                  `text-[13px] font-semibold pb-1 border-b-2 ${isActive
+                    ? 'border-orange-500'
+                    : 'border-transparent text-gray-700 hover:border-orange-500'
+                  }`
+                }
+              >
+                Cars
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-booking"
+                className={({ isActive }) =>
+                  `text-[13px] font-semibold pb-1 border-b-2 ${isActive
+                    ? 'border-orange-500 '
+                    : 'border-transparent text-gray-700 hover:border-orange-500'
+                  }`
+                }
+              >
+                My Booking
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
 
-            {/* Live Chat Button */}
+                to="/blogs"
+                className={({ isActive }) =>
+                  `text-[13px] font-semibold pb-1 border-b-2 ${isActive
+                    ? 'border-orange-500 '
+                    : 'border-transparent text-gray-700 hover:border-orange-500 '
+                  }`
+                }
+              >
+                Blog
+              </NavLink>
+            </li>
             <li>
               <button
                 onClick={openLiveChat}
-                className="bg-orange-500 text-white px-3 py-1 rounded text-sm mt-2 lg:mt-0 flex items-center"
+                className="bg-orange-500 text-white px-3 py-1 rounded text-sm font-semibold flex items-center"
               >
-                <i className="fa fa-comments mr-1"></i> Live Chat
+                <FaComments className="mr-2" />
+                Live Chat
               </button>
             </li>
-
-            {/* Country Selector */}
-            <li className="relative ml-5 text-sm">
-      <button
-        type="button"
-        onClick={() => setDropdownOpen(!dropdownOpen)}
-        className="flex items-center px-2 py-1 border border-gray-300 rounded cursor-pointer no-underline focus:outline-none bg-white"
-      >
-        <img
-          src={selectedCountry.image}
-          alt={selectedCountry.name}
-          className="w-8 h-auto object-cover mr-2 -mt-[2px]"
-        />
-        <span>{selectedCountry.name}</span>
-        <svg
-          className="w-3 h-3 ml-1 text-gray-600"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.292l3.71-4.06a.75.75 0 111.1 1.02l-4.25 4.65a.75.75 0 01-1.1 0L5.21 8.27a.75.75 0 01.02-1.06z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </button>
-
-      {dropdownOpen && (
-        <div className="absolute z-10 bg-white shadow-md mt-1 rounded border border-gray-200 min-w-[140px]">
-          <button
-            onClick={() =>
-              handleSelect({
-                name: 'USA',
-                image: '/images/usa.png',
-              })
-            }
-            className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex items-center no-underline"
-          >
-            <img
-              src="/images/usa.png"
-              alt="USA"
-              className="w-8 h-auto mr-2 object-cover -mt-[3px]"
-            />
-            USA
-          </button>
-        </div>
-      )}
-    </li>
+            <li className="relative">
+              <button
+                type="button"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="flex items-center px-2 py-1 border border-gray-300 rounded bg-white text-sm"
+              >
+                <img
+                  src={selectedCountry.image}
+                  alt={selectedCountry.name}
+                  className="w-8 h-auto object-cover mr-2 -mt-[2px]"
+                />
+                <span>{selectedCountry.name}</span>
+              </button>
+              {dropdownOpen && (
+                <div className="absolute z-10 bg-white shadow-md mt-1 rounded border border-gray-200 min-w-[140px]">
+                  {countries
+                    .filter((c) => c.name !== selectedCountry.name)
+                    .map((country) => (
+                      <button
+                        key={country.name}
+                        onClick={() => handleSelect(country)}
+                        className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex items-center"
+                      >
+                        <img
+                          src={country.image}
+                          alt={country.name}
+                          className="w-8 h-auto mr-2 object-cover -mt-[3px]"
+                        />
+                        {country.name}
+                      </button>
+                    ))}
+                </div>
+              )}
+            </li>
           </ul>
 
-          {/* Toll-Free Info (Desktop Only) */}
-          <div className="hidden lg:flex items-center ml-10 gap-2 relative z-[9] text-left text-[#212529] text-base font-normal">
-  <div className="text-right mr-3">
-    <p className="text-[12px] leading-[1.5] text-end font-normal text-[#333] m-0 p-0">
-      Book online or call us now
-    </p>
-    <a
-      href="tel:+1-844-869-5222"
-      className="text-[#f60] font-semibold text-[20px] leading-6 bg-transparent no-underline text-left"
-    >
-      +1-844-869-5222
-    </a>
-  </div>
-<div className="">
-  <div className=" border-white border-[1px] rounded-full bg-green-500 absolute w-3 h-3 right-0"></div>
-<img
-    src="/images/support.png"
-    alt="Support"
-    className="w-[45px] h-[45px] aspect-[1] bg-[rgba(198,39,128,0.22)] rounded-full align-middle border-0"
-  />
+          {/* Toll-Free (Desktop) */}
+          <div className="ml-5  relative overflow-hidden rounded-3xl">
+            <div className="absolute inset-0 bg-orange-200 z-0 animate-expand-bg origin-center pointer-events-none rounded-3xl"></div>
 
-</div>
-
-</div>
-
-
+            <div className="flex items-center justify-between h-full px-6 z-10 relative">
+              <div className="text-right">
+                <p className="text-[12px] leading-[1.5] text-[#333] m-0 p-0">
+                  Book online or call us now
+                </p>
+                <a
+                  href="tel:+1-844-869-5222"
+                  className="text-[#f60] font-semibold text-[20px] leading-6"
+                >
+                  +1-844-869-5222
+                </a>
+              </div>
+              <div className="relative">
+                <div className="border-white border-[1px] rounded-full bg-green-500 absolute w-3 h-3 right-0 top-0"></div>
+                <img
+                  src="/images/support.png"
+                  alt="Support"
+                  className="w-[45px] h-[45px] rounded-full"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`lg:hidden absolute top-full right-0 w-full bg-white shadow-md z-40 transition-transform duration-300 ease-in-out transform ${menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+      >
+        <ul className="flex flex-col p-4 space-y-4">
+          <li>
+            <Link
+              to="/"
+              className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
+            >
+              <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
+                <FaHome />
+              </span>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/flights"
+              className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
+            >
+              <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
+                <FaPlane />
+              </span>
+              Flights
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/cars"
+              className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
+            >
+              <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
+                <FaCar />
+              </span>
+              Cars
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/my-booking"
+              className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
+            >
+              <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
+                <FaBook />
+              </span>
+              My Booking
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/blogs"
+              className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
+            >
+              <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
+                <FaBlog />
+              </span>
+              Blog
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
