@@ -117,20 +117,20 @@ const Footer = () => {
                     <hr className="mt-2 border-white" />
                     {/* contact info  */}
                     <p className='flex items-center gap-2 text-[13px] fontstyle'>
-                        <span className='flex justify-center items-center border-1 rounded p-1 border-orange-400'>
-                            <FaPhoneAlt size={12} color='orange' />
+                        <span className='flex justify-center items-center border-[1px] rounded p-1 border-[#ff8004]'>
+                            <FaPhoneAlt size={12} color='#ff8004' />
                         </span>
                         +1 844 869 5222
                     </p>
                     <p className='flex items-center gap-2 text-[13px] fontstyle'>
-                        <span className='flex justify-center items-center border-1 rounded p-1 border-orange-400'>
-                            <FaEnvelope size={12} color='orange' />
+                        <span className='flex justify-center items-center border-[1px] rounded p-1 border-[#ff8004]'>
+                            <FaEnvelope size={12} color='#ff8004' />
                         </span>
                         help@Cheapfaremart.com
                     </p>
-                    <p className='flex items-center gap-2 text-[13px] fontstyle'>
-                        <span className='flex justify-center items-center border-1 rounded p-1 border-orange-400'>
-                            <FaMapMarkerAlt size={12} color='orange' />
+                    <p className='flex items-center  gap-2 text-[13px] fontstyle '>
+                        <span className='flex justify-center items-center border-[1px] rounded p-1  border-[#ff8004]'>
+                            <FaMapMarkerAlt size={12} color='#ff8004' />
                         </span>
                         771 S Kirkman Rd, Suite 112, Orlando,FL 32811
                     </p>
