@@ -155,7 +155,7 @@ const Footer = () => {
 
                 {/* Payment Icon */}
                 <div className='flex gap-2 flex-wrap justify-center'>
-                    <img src="images/sectigo.png" className='h-[30px]' />
+                    <img src="images/Sectigo.png" className='h-[30px]' />
                     <img src='images/itan.png' className='h-[30px]' />
                     <img src='images/ASTALogo.jpg' className='h-[30px]' />
                     <img src='images/arc_accredited_teal_150.jpg' className='h-[30px]' />
