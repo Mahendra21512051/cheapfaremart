@@ -16,6 +16,9 @@ export default {
         // Runs forever
         'expand-bg': 'expand-bg 2s ease-in-out infinite',
       },
+      accentColor: {
+        orange: '#fd7e14',
+      },
     },
   },
   plugins: [],

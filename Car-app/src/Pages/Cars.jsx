@@ -1,8 +1,14 @@
 import React from 'react'
+import SearchCar from '../component/Car-Component/SearchCar'
 
 const Cars = () => {
   return (
-    <div>Cars</div>
+    <div>
+      <SearchCar/>
+      <div>Cars</div>
+
+    </div>
+    
   )
 }
 

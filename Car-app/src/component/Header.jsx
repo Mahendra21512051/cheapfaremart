@@ -210,13 +210,15 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full right-0 w-full bg-white shadow-md z-40 transition-transform duration-300 ease-in-out transform ${menuOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed top-[64px] right-0 w-full max-w-[400px] h-[calc(100vh-64px)] bg-white shadow-md z-50 transition-transform duration-300 ease-in-out transform ${menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
+
         <ul className="flex flex-col p-4 space-y-4">
           <li>
             <Link
               to="/"
+              onClick={() => setMenuOpen(false)}
               className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
             >
               <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
@@ -228,6 +230,7 @@ const Header = () => {
           <li>
             <Link
               to="/flights"
+              onClick={() => setMenuOpen(false)}
               className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
             >
               <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
@@ -239,6 +242,7 @@ const Header = () => {
           <li>
             <Link
               to="/cars"
+              onClick={() => setMenuOpen(false)}
               className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
             >
               <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
@@ -250,6 +254,7 @@ const Header = () => {
           <li>
             <Link
               to="/my-booking"
+              onClick={() => setMenuOpen(false)}
               className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
             >
               <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
@@ -261,6 +266,7 @@ const Header = () => {
           <li>
             <Link
               to="/blogs"
+              onClick={() => setMenuOpen(false)}
               className="text-gray-700 text-[13px] font-semibold flex items-center gap-2"
             >
               <span className="p-1.5 border border-[#376d72] rounded-sm text-[#376d72]">
@@ -271,6 +277,8 @@ const Header = () => {
           </li>
         </ul>
       </div>
+
+
     </nav>
   );
 };
