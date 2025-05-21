@@ -52,28 +52,35 @@ const SearchCar = () => {
                                     type="checkbox"
                                     checked={isSameLocation}
                                     onChange={handleLocationCheckbox}
-                                    className="h-[18px] w-[18px] border-2 border-white rounded-[2px] bg-transparent cursor-pointer outline-none opacity-50 appearance-none peer"
+                                    className=" h-[18px] w-[18px] 
+                                    border-2 border-white 
+                                    rounded-[2px] 
+                                    cursor-pointer 
+                                    outline-none 
+                                    bg-white
+                                    checked:bg-white
+                                    checked:accent-[#fd7e14]
+                                    transition-all duration-200 "
                                 />
                                 <span className="text-white">Drop-off location is the same</span>
                             </label>
 
                             <label className="inline-flex items-center space-x-2 cursor-pointer">
-                            <input
-  type="checkbox"
-  checked={isDriverOver25}
-  onChange={handleDriverAgeCheckbox}
-  className="
-    h-[18px] w-[18px] 
-    border-2 border-white 
-    rounded-[2px] 
-    cursor-pointer 
-    outline-none 
-    bg-white
-    checked:bg-white
-    checked:accent-[#fd7e14]
-    transition-all duration-200
-  "
-/>
+                                <input
+                                    type="checkbox"
+                                    checked={isDriverOver25}
+                                    onChange={handleDriverAgeCheckbox}
+                                    className="
+                                    h-[18px] w-[18px] 
+                                    border-2 border-white 
+                                    rounded-[2px] 
+                                    cursor-pointer 
+                                    outline-none 
+                                    bg-white
+                                    checked:bg-white
+                                    checked:accent-[#fd7e14]
+                                    transition-all duration-200 "
+                                        />
 
                                 <span className="text-white">Driver's age is 25 or over</span>
                             </label>
@@ -87,7 +94,7 @@ const SearchCar = () => {
                                             value="18-20"
                                             checked={driverAgeRange === "18-20"}
                                             onChange={() => setDriverAgeRange("18-20")}
-                                            className="form-radio h-5 w-5"
+                                            className="form-radio h-5 w-5 accent-orange "
                                         />
                                         <span>18-20</span>
                                     </label>
@@ -99,7 +106,7 @@ const SearchCar = () => {
                                             value="21-24"
                                             checked={driverAgeRange === "21-24"}
                                             onChange={() => setDriverAgeRange("21-24")}
-                                            className="form-radio h-5 w-5"
+                                            className="form-radio h-5 w-5  accent-orange"
                                         />
                                         <span>21-24</span>
                                     </label>
