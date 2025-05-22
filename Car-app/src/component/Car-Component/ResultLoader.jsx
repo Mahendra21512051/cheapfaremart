@@ -57,6 +57,9 @@ const ResultLoader = () => {
                     </>
 
                 )}
+                {/* <div className='mt-4'>
+                    <img src='images/loading-bar.gif' className='h-[30px]'/>
+                </div> */}
                 <div class="loader-container">
                     <div class="loader-bar"></div>
                 </div>
