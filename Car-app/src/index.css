@@ -20,3 +20,29 @@
 }
 
 
+/* Loader for car result */
+.loader-container {
+  width: 50%;
+  height: 22px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.loader-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #cd7e5c;
+  animation: loading 2s;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
