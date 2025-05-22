@@ -4,9 +4,6 @@ import { FaAngleDown } from 'react-icons/fa';
 import { features, categories, faqs } from '../CarData'
 
 const Cars = () => {
-
-
-
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -16,7 +13,6 @@ const Cars = () => {
   return (
     <div>
       <SearchCar />
-
       <div>
         <div className='p-4'>
           <h1 className='fontstyle1 text-[24px]'>Book Cheap Car Rentals</h1>

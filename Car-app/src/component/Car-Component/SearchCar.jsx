@@ -33,8 +33,8 @@ const SearchCar = () => {
     };
 
     return (
-        <div className="max-w-full mx-auto px-4 py-8 font-sans text-gray-900 bg-[url('/images/carrental.jpg')] bg-cover bg-center bg-no-repeat">
-            <div className="flex flex-col lg:flex-row gap-8">
+        <div className="relative max-w-full lg:h-[80vh] mx-auto px-8 py-4 font-sans text-gray-900 bg-[url('/images/carrental.jpg')] bg-cover bg-center bg-no-repeat">
+            <div className="flex flex-col lg:flex-row lg:h-[58vh] lg:gap-8 gap-8 mt-11">
                 {/* Form Section */}
                 <div className="flex-1 web-color p-6 rounded-lg shadow-md bg-opacity-90 bg-black/50">
                     <h1 className="text-2xl font-bold mb-2 text-white">
@@ -44,7 +44,7 @@ const SearchCar = () => {
                         Free cancellations on most bookings.
                     </h2>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-3">
                         {/* Checkboxes */}
                         <div className="flex flex-col md:flex-row gap-6">
                             <label className="inline-flex items-center space-x-2 cursor-pointer">
@@ -191,7 +191,7 @@ const SearchCar = () => {
                         </div>
 
                         {/* Submit Button */}
-                        <div className="pt-4">
+                        <div className="pt-2">
                             <button
                                 type="submit"
                                 className="w-full md:w-1/3 py-[14px] bg-[#ff6600] text-white text-[18px] font-semibold rounded-[2px] border-none hover:bg-orange-700 transition-colors duration-200 cursor-pointer"
@@ -204,7 +204,7 @@ const SearchCar = () => {
                 </div>
 
                 {/* Sidebar */}
-                <aside className="w-full lg:w-1/3 bg-white p-6 rounded-2xl shadow-md">
+                <aside className="w-full lg:w-1/3 bg-white p-6 rounded-2xl shadow-md lg:h-[45vh]">
                     <h3 className="text-xl font-[600] text-[#20595e] mb-6">
                         Why use Cheapfaremart?
                     </h3>
