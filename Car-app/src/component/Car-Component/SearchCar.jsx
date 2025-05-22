@@ -33,7 +33,7 @@ const SearchCar = () => {
     };
 
     return (
-        <div className="relative max-w-full lg:h-[80vh] mx-auto px-8 py-4 font-sans text-gray-900 bg-[url('/images/carrental.jpg')] bg-cover bg-center bg-no-repeat">
+        <div className="relative max-w-full lg:h-[80vh] mx-auto px-8 py-4 font-sans text-gray-900 bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/images/carrental.jpg')] bg-cover bg-center bg-no-repeat">
             <div className="flex flex-col lg:flex-row lg:h-[58vh] lg:gap-8 gap-8 mt-11">
                 {/* Form Section */}
                 <div className="flex-1 web-color p-6 rounded-lg shadow-md bg-opacity-90 bg-black/50">
@@ -80,7 +80,7 @@ const SearchCar = () => {
                                     checked:bg-white
                                     checked:accent-[#fd7e14]
                                     transition-all duration-200 "
-                                        />
+                                />
 
                                 <span className="text-white">Driver's age is 25 or over</span>
                             </label>
