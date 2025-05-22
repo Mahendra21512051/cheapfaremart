@@ -14,7 +14,7 @@ const CarResult = () => {
 
     return (
         <div className='relative'>
-            {loading ? (
+            {!loading ? (
                 <ResultLoader />
             ) : (
                 <div className='p-5'>
